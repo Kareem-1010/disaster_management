@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Donate to support disaster management efforts. Your contributions can make a difference.">
+    <meta name="keywords" content="disaster management donation, donate for disaster relief, contribute disaster management">
+    <meta name="author" content="Your Name">
+    <title>Donate</title>
+</head>
+<body>
+    <h1>Make a Donation</h1>
+    <form method="POST" action="{{ url_for('main.donate') }}">
+        {{ form.hidden_tag() }}
+        <div>
+            <label for="amount">Donation Amount:</label>
+            {{ form.amount(size=20) }}
+        </div>
+        <button type="submit">Donate</button>
+    </form>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            font-size: 28px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</body>
+</html>

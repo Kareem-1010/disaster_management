@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A comprehensive disaster management system providing dashboards, resource maps, donations, and disaster predictions.">
+    <meta name="keywords" content="disaster management, disaster prediction, resource mapping, donations, dashboard">
+    <meta name="author" content="Your Name">
+    <title>{% block title %}Disaster Management{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('main.index') }}">Home</a></li>
+            <li><a href="{{ url_for('main.dashboard') }}">Dashboard</a></li>
+            <li><a href="{{ url_for('main.resource_map') }}">Resource Map</a></li>
+            <li><a href="{{ url_for('main.donate') }}">Donate</a></li>
+            <li><a href="{{ url_for('main.prediction') }}">Prediction</a></li>
+            {% if current_user.is_authenticated %}
+            <li><a href="{{ url_for('main.logout') }}">Logout</a></li>
+            {% else %}
+            <li><a href="{{ url_for('main.login') }}">Login</a></li>
+            <li><a href="{{ url_for('main.register') }}">Register</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

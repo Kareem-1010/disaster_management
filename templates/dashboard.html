@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h2>Dashboard</h2>
+<h3>Your Resources</h3>
+<ul>
+    {% for resource in resources %}
+    <li>{{ resource.name }} - {{ resource.description }}</li>
+    {% endfor %}
+</ul>
+<h3>Your Donations</h3>
+<ul>
+    {% for donation in donations %}
+    <li>${{ donation.amount }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+
+<style>
+    h2 {
+        color: #2c3e50;
+        font-size: 24px;
+    }
+
+    h3 {
+        color: #34495e;
+        font-size: 20px;
+    }
+
+    ul {
+        list-style-type: disc;
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+</style>
